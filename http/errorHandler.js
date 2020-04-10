@@ -8,7 +8,7 @@ function errorHandler (error, req, res, next) { // eslint-disable-line no-unused
     error.statusCode = 500;
   }
 
-  res.status(error.statusCode).send(error.message);
+  res.status(error.statusCode).send(error.stack || error.message);
 }
 
 module.exports = { errorHandler };
